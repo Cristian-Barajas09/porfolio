@@ -10,6 +10,8 @@
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Porfolio's Cristian">
+
+
 </svelte:head>
 
 <section>

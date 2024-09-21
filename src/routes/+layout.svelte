@@ -40,6 +40,7 @@
 
 <svelte:body use:manageTheme />
 
+
 <Navbar />
 
 <main>
