@@ -43,5 +43,10 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@tailwindcss/container-queries": "^0.1.1",
+		"@tailwindcss/forms": "^0.5.10",
+		"dayjs": "^1.11.19"
 	}
 }
