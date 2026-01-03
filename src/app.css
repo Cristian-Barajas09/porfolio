@@ -15,6 +15,11 @@ body {
 }
 
 
+@theme {
+    --color-dark: #1a1a1a;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer components {
     .content-container {
@@ -24,5 +29,10 @@ body {
     .hovered-container:hover {
         box-shadow: 1px 1px 1px 0 black;
     }
+
+    .dark {
+        @apply bg-dark;
+    }
+
 
 }

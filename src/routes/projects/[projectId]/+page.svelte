@@ -5,18 +5,18 @@
 </script>
 
 <div class="project__container">
-	<div class="bg-white border-2 p-2 project__content">
+	<div class="bg-white dark:bg-dark border-2 p-2 project__content">
 		<div>
-			<h1 class="text-3xl font-bold">{project.title}</h1>
+			<h1 class="text-3xl font-bold dark:text-gray-100">{project.title}</h1>
 		</div>
 		<div>
 			<img src={project.image ?? '/icons/favicon.svg'} alt={project.title} />
-			<p>{project.description}</p>
+			<p class="dark:text-gray-100">{project.description}</p>
 		</div>
 	</div>
-	<div class="bg-white border-2 project__sidebar p-2 flex flex-col gap-5">
+	<div class="bg-white dark:bg-dark border-2 project__sidebar p-2 flex flex-col gap-5">
 		<div>
-			<h4 class="text-xl font-bold">Proyectos relacionados</h4>
+			<h4 class="text-xl font-bold dark:text-gray-100">Proyectos relacionados</h4>
 		</div>
 		<div class="flex flex-col w-full">
 			{#each otherProjects as project (project.id)}
@@ -24,7 +24,9 @@
 					href="/projects/{project.id}"
 					class="content-container hovered-container transition-all w-full border-2 p-2"
 				>
-					{project.title}
+					<span class="dark:text-gray-100">
+						{project.title}
+					</span>
 				</a>
 			{/each}
 		</div>

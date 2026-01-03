@@ -5,6 +5,14 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<script>/* theme-init: runs before hydration to avoid FOUC */(function(){try{
+			var k='theme',v=localStorage.getItem(k);
+			var prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			var use = v === 'dark' || (v === 'system' ? prefersDark : (v === 'light' ? false : (v===null?prefersDark:false)));
+			if(use) document.documentElement.classList.add('dark'), document.documentElement.setAttribute('data-theme','dark');
+			else document.documentElement.classList.remove('dark'), document.documentElement.setAttribute('data-theme','light');
+		}catch(e){} })();</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

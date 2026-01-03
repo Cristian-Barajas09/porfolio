@@ -1,23 +1,48 @@
 <script lang="ts">
+	import Navbar from '$lib/components/navbar.component.svelte';
+	import type { Attachment } from 'svelte/attachments';
 	import '../app.css';
+	import { theme, type Theme } from '$lib/store/theme';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
 	let { children } = $props();
+
+	onMount(() => {
+		const getThemePreference = (): Theme => {
+			if (typeof localStorage !== 'undefined') {
+				return (localStorage.getItem("theme") as Theme | null) ?? "system"
+			}
+
+			return window.matchMedia("(prefers-color-scheme: dark)").matches
+				? "dark"
+				: "light"
+		}
+
+
+		theme.set(getThemePreference());
+	})
+
+
+	const attachTheme: Attachment<Document> = (element) => {
+		if (browser) {
+			const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+	
+			theme.subscribe((newTheme) => {
+				const isDark = newTheme === "dark" || (newTheme === "system" && matchMedia.matches)
+
+				element.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+			})
+		};
+
+	}
+
 </script>
 
-<header class="p-4">
-	<nav
-		class="flex justify-center items-center content-container border-2 p-3 bg-white dark:bg-[#1a1a1a]"
-	>
-		<ul class="flex gap-2">
-			<li class="dark:text-gray-100 hover:text-amber-500 font-bold">
-				<a href="/#experience"> Experiencia </a>
-			</li>
-			<li class="dark:text-gray-100 hover:text-amber-500 font-bold">
-				<a href="/#projects"> Proyectos </a>
-			</li>
-		</ul>
-	</nav>
-</header>
+
+<svelte:document {@attach attachTheme} />
+
+<Navbar />
 
 <main class="flex flex-col gap-5 p-3 min-h-screen">
 	{@render children()}
