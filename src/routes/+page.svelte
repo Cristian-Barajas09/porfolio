@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PresentationSection from '$lib/components/presentation-section.component.svelte';
 	import ProjectsSection from '$lib/components/projects-section.component.svelte';
+	import SkillsSection from '$lib/components/skills-section.component.svelte';
 	import WorkExperienceSection from '$lib/components/work-experience/work-experience-section.component.svelte';
 </script>
 
@@ -14,6 +15,10 @@
 
 <section id="experience">
 	<WorkExperienceSection />
+</section>
+
+<section>
+	<SkillsSection />
 </section>
 
 <!-- projects section -->

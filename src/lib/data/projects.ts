@@ -7,6 +7,7 @@ export type Project = {
 	description?: string;
 	languages: Language[];
 	inWork: boolean;
+	githubURL?: string;
 }
 
 
@@ -22,7 +23,8 @@ export const projects: Project[] = [
 		Proyecto para crear tus propias plantillas de email
 		inspirado en la plataforma Mailersend
 		`,
-		inWork: true
+		inWork: true,
+		githubURL: "https://github.com/Cristian-Barajas09/emailcontroller_api"
 	},
 	{
 		id: 2,
@@ -35,6 +37,7 @@ export const projects: Project[] = [
 			CSHARP, ANGULAR
 		],
 		inWork: true,
-		image: "/ecommerce.png"
+		image: "/ecommerce.png",
+		githubURL: "https://github.com/Cristian-Barajas09/NetCommerce"
 	},
 ];

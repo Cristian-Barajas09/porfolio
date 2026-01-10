@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Language } from '$lib/data/languages';
 	import ProjectLanguage from './project-language.component.svelte';
+	import GithubIcon from './icons/github-icon.svelte';
 
 	type Props = {
 		id: number;
@@ -9,14 +10,15 @@
 		languages: Language[];
 		image?: string;
 		inWork?: boolean;
+		githubURL?: string;
 	};
 
-	let { id, title, description, languages, image, inWork = true }: Props = $props();
-
+	let { id, title, description, languages, image, githubURL, inWork = true }: Props = $props();
 </script>
 
-
-<article class="dark:bg-[#1a1a1a] bg-white relative md:w-[45%] md:h-56 flex flex-col-reverse md:flex-row justify-between project__card content-container">
+<article
+	class="dark:bg-[#1a1a1a] bg-white relative md:w-[45%] md:h-56 flex flex-col-reverse md:flex-row justify-between project__card content-container"
+>
 	{#if inWork}
 		<div class="badge-develop">
 			<span class="dark:text-gray-100">En desarrollo</span>
@@ -32,16 +34,20 @@
 				{/each}
 			</div>
 			<p class="text-base dark:text-gray-50">
-				{(description ?? "").slice(0, 200)}
+				{(description ?? '').slice(0, 200)}
 				{#if (description?.length ?? 0) > 200}
 					...
 				{/if}
 			</p>
 		</div>
 		<div class="p-1">
-			<a href={`/projects/${id}`} class="px-2 py-1 project__button" type="button">
-				<span class="dark:text-gray-100">Ver más</span>
-			</a>
+			{#if githubURL}
+				<span class="w-[40px] px-2 py-1 project__button">
+					<a href={githubURL} target="_blank" class=" ">
+						<GithubIcon />
+					</a>
+				</span>
+			{/if}
 		</div>
 	</div>
 
@@ -57,10 +63,18 @@
 		@apply duration-75 transition-all border-2;
 	}
 
-
 	.project__button {
-		box-shadow: 5px 5px 1px 0 black;
-		@apply duration-75 transition-all cursor-pointer border-2;
+		box-shadow: 2px 2px 1px 0 black;
+		@apply duration-150 transition-all cursor-pointer border-2 flex items-center justify-center;
+	}
+
+	/* Constrain SVG icons rendered by child components so they don't overflow */
+	.project__button :global(svg) {
+		width: 20px;
+		height: 20px;
+		max-width: 100%;
+		max-height: 100%;
+		display: block;
 	}
 
 	.project__button:hover {
