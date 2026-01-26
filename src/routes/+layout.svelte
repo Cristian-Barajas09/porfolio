@@ -52,7 +52,7 @@
 	<div class="flex justify-end p-3 bg-white dark:bg-[#1a1a1a] border-2">
 		<a
 			class="dark:bg-[#1a1a1a] content-container hovered-container transition-all bg-white border-2 px-2 py-1"
-			href="mailto:cristianbarajasimasc@gmail.com"
+			href="mailto:cristian.barajasdev+portfolio@gmail.com"
 		>
 			<span class="dark:text-gray-100"> Contacto </span>
 		</a>
