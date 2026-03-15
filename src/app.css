@@ -3,36 +3,62 @@
 @plugin "@tailwindcss/container-queries";
 
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-    @apply dark:bg-slate-900 bg-amber-100;
+	/* Capa 1: Patrón de puntos diminutos */
+	background-image: radial-gradient(#000000 10%, transparent 10.5%); /* Puntos negros */
+
+	/* Ajusta el tamaño de los puntos y la separación (patrón) */
+	background-size: 8px 8px; /* Controla la densidad y tamaño de los puntos */
+
+	/* Asegura que el patrón cubra toda la página */
+	background-position: 0 0;
+	background-repeat: repeat;
+
+	@apply dark:bg-slate-900 bg-amber-100;
 }
 
-
 @theme {
-    --color-dark: #1a1a1a;
+	--color-dark: #1a1a1a;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer components {
-    .content-container {
-        box-shadow: 5px 5px 1px 0 black;
-    }
+	.content-container {
+		box-shadow: 5px 5px 1px 0 black;
+	}
 
-    .hovered-container:hover {
-        box-shadow: 1px 1px 1px 0 black;
-    }
+	.hovered-container:hover {
+		box-shadow: 1px 1px 1px 0 black;
+	}
 
-    .dark {
-        @apply bg-dark;
-    }
+	.dark {
+		@apply bg-dark;
+	}
 
-
+	.content-wrapper {
+		/* Crea franjas de dos colores que rotan desde el centro */
+		background: conic-gradient(#ffde00 0deg 15deg, #ffae00 15deg 30deg);
+		/* Esto repite el patrón de 30 grados en todo el círculo */
+		background-repeat: repeat;
+		background-size: 100% 100%;
+	}
 }

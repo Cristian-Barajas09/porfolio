@@ -13,7 +13,7 @@
 		githubURL?: string;
 	};
 
-	let { id, title, description, languages, image, githubURL, inWork = true }: Props = $props();
+	let { title, description, languages, image, githubURL, inWork = true }: Props = $props();
 </script>
 
 <article
