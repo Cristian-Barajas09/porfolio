@@ -26,6 +26,13 @@ export const workExperience: WorkExperience[] = [
         id: 2,
         title: "Kunaisoft",
         from: dayjs("2023-06-01"),
+        to: dayjs("2026-01-12"),
         description: "Desarrollar cualquier Software desde un CRM hasta un software para una clinica"
+    },
+    {
+        id: 3,
+        title: "Remax Momentum",
+        from: dayjs("2026-01-12"),
+        description: "Administrar la base de datos y administrar el sistema"
     },
 ]

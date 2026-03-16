@@ -28,7 +28,7 @@
 	<span>{diffLabel}</span>
 {/snippet}
 
-<div class="content-container border-2 dark:bg-[#1a1a1a] bg-white p-2">
+<div class="content-container border-2 dark:bg-[#1a1a1a] bg-white p-3">
 	<div>
 		<h3 class="text-xl font-bold dark:text-white">
 			{title}

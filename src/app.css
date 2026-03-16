@@ -22,17 +22,10 @@ html {
 }
 
 body {
-	/* Capa 1: Patrón de puntos diminutos */
-	background-image: radial-gradient(#000000 10%, transparent 10.5%); /* Puntos negros */
 
-	/* Ajusta el tamaño de los puntos y la separación (patrón) */
-	background-size: 8px 8px; /* Controla la densidad y tamaño de los puntos */
-
-	/* Asegura que el patrón cubra toda la página */
-	background-position: 0 0;
-	background-repeat: repeat;
-
-	@apply dark:bg-slate-900 bg-amber-100;
+    @apply bg-amber-100 dark:bg-slate-900;
+    @apply bg-[length:8px_8px] bg-repeat bg-[position:0_0];
+    @apply bg-[radial-gradient(#d3d2d2_10%,_transparent_10.5%)] dark:bg-[radial-gradient(#000000_10%,_transparent_10.5%)];
 }
 
 @theme {

@@ -1,5 +1,5 @@
-<svg viewBox="0 0 128 128">
-	<g fill="#181616"
+<svg viewBox="0 0 128 128" aria-hidden="true" class="text-zinc-900 dark:text-zinc-100">
+	<g fill="currentColor"
 		><path
 			fill-rule="evenodd"
 			clip-rule="evenodd"
