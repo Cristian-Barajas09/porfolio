@@ -1,4 +1,4 @@
-import  { PYTHON, POSTGRESQL, CSHARP, type Language, ANGULAR } from "./languages";
+import  { type Language, ANGULAR, LARAVEL } from "./languages";
 
 export type Project = {
 	id: number;
@@ -15,29 +15,14 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		id: 1,
-		title: "Email templater",
+		title: "HealthChecker",
 		languages: [
-			PYTHON, POSTGRESQL
+			LARAVEL, ANGULAR
 		],
+		image: '/projects/health-checker.png',
 		description: `
-		Proyecto para crear tus propias plantillas de email
-		inspirado en la plataforma Mailersend
+		Una aplicación para hacer una revision del estado de tus sitios web
 		`,
 		inWork: true,
-		githubURL: "https://github.com/Cristian-Barajas09/emailcontroller_api"
-	},
-	{
-		id: 2,
-		title: "Ecommerce",
-		description: `
-			Ecommerce hecho para demostrar mis habilidades
-			con C# y angular
-		`,
-		languages: [
-			CSHARP, ANGULAR
-		],
-		inWork: true,
-		image: "/ecommerce.png",
-		githubURL: "https://github.com/Cristian-Barajas09/NetCommerce"
 	},
 ];

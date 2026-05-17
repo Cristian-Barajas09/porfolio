@@ -3,6 +3,7 @@ import PythonIcon from '$lib/components/icons/python-icon.svelte';
 import DotnetIcon from '$lib/components/icons/dotnet-icon.svelte';
 import AngularIcon from '$lib/components/icons/angular-icon.svelte';
 import PostgresqlIcon from '$lib/components/icons/postgresql-icon.svelte';
+import LaravelIcon from '$lib/components/icons/laravel-icon.svelte'
 
 export type Language = {
 	name: string;
@@ -27,4 +28,9 @@ export const POSTGRESQL: Language = {
 export const ANGULAR: Language = {
     name: "Angular",
     icon: AngularIcon
+}
+
+export const LARAVEL: Language = {
+    name: 'Laravel',
+    icon: LaravelIcon
 }

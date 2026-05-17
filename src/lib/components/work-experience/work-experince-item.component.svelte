@@ -28,12 +28,12 @@
 	<span>{diffLabel}</span>
 {/snippet}
 
-<div class="content-container border-2 dark:bg-[#1a1a1a] bg-white p-3">
+<div class="flex flex-col gap-3 content-container border-2 dark:bg-[#1a1a1a] bg-white p-3">
 	<div>
 		<h3 class="text-xl font-bold dark:text-white">
 			{title}
 		</h3>
-		<div class="dark:text-gray-50 text-gray-600 text-sm">
+		<div class="dark:text-gray-400 text-gray-600 text-sm">
 			<time>
 				{from.format('MMM. YYYY')}
 			</time>

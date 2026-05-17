@@ -29,9 +29,9 @@
 <div
 	class="p-5 flex flex-col-reverse md:flex-row gap-5 justify-center items-center"
 >
-	<div class="flex justify-center flex-wrap md:w-[75%] gap-2 p-2">
+	<div class="flex justify-center flex-wrap w-full md:w-[75%] gap-2 p-2">
 		{#each skills as skill (skill.name)}
-			<div class="w-1/12 bg-white content-container border-2 p-1">
+			<div class=" w-1/4 md:w-1/12 bg-white dark:bg-dark content-container border-2 p-1">
 				<skill.icon {...skill} />
 			</div>
 		{/each}
