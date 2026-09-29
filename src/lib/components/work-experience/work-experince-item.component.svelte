@@ -16,8 +16,8 @@
 	{@const end = to ?? dayjs()}
 	{@const monthsFloat = end.diff(from, 'month', true)}
 	{@const monthsRounded = Math.ceil(monthsFloat)}
-	{@const years = Math.floor(monthsRounded / 12)}
 	{@const months = monthsRounded % 12}
+	{@const years = Math.floor(monthsRounded / 12)}
 	{@const yearsPart = years > 0 ? `${years} ${years === 1 ? 'año' : 'años'}` : ''}
 	{@const monthsPart = months > 0 ? `${months} ${months === 1 ? 'mes' : 'meses'}` : ''}
 	{@const diffLabel =

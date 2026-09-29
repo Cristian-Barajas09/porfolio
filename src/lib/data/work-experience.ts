@@ -33,6 +33,7 @@ export const workExperience: WorkExperience[] = [
         id: 3,
         title: "Remax Momentum",
         from: dayjs("2026-01-12"),
+        to: dayjs("2026-09-09"),
         description: "Administrar la base de datos, creacion y mantenimiento de nuevas caracteriscas"
     },
 ]

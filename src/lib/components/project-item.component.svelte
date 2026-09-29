@@ -2,6 +2,7 @@
 	import type { Language } from '$lib/data/languages';
 	import ProjectLanguage from './project-language.component.svelte';
 	import GithubIcon from './icons/github-icon.svelte';
+	import LinkIcon from './icons/link-icon.svelte';
 
 	type Props = {
 		id: number;
@@ -11,9 +12,10 @@
 		image?: string;
 		inWork?: boolean;
 		githubURL?: string;
+		link?: string;
 	};
 
-	let { title, description, languages, image, githubURL, inWork = true }: Props = $props();
+	let { title, description, languages, image, githubURL, link, inWork = true }: Props = $props();
 </script>
 
 <article
@@ -43,8 +45,15 @@
 		<div class="p-1">
 			{#if githubURL}
 				<span class="w-[40px] px-2 py-1 project__button">
-					<a href={githubURL} target="_blank" class=" ">
+					<a href={githubURL} target="_blank" class="dark:text-gray-100">
 						<GithubIcon />
+					</a>
+				</span>
+			{/if}
+			{#if !inWork && !githubURL}
+				<span class="w-[40px] px-2 py-1 project__button">
+					<a href={link} target="_blank" class="dark:text-gray-100">
+						<LinkIcon />
 					</a>
 				</span>
 			{/if}

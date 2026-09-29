@@ -16,7 +16,7 @@
 			<div>
 				<!-- todo: pensar en una mejor presentacion -->
 				<p class="font-semibold dark:text-gray-100">
-					Con dos años de experiencia trabajando como desarrollador de software. Tengo
+					Con tres años de experiencia trabajando como desarrollador de software. Tengo
 					una sólida experiencia en lenguajes como javascript, php, python y sus frameworks tales
 					como express js en javascript, Laravel en php y Fast API en python.
 				</p>
